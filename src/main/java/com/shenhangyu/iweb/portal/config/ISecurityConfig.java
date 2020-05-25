@@ -1,7 +1,7 @@
 /**
  * 版权所有©深航渔
  */
-package com.shenhangyu.icard.icardweb.config;
+package com.shenhangyu.iweb.portal.config;
 
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

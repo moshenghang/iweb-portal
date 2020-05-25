@@ -1,8 +1,8 @@
-package com.shenhangyu.icard.icardweb.controller;
+package com.shenhangyu.iweb.portal.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.shenhangyu.icard.icardweb.bean.CardInfoBean;
-import com.shenhangyu.icard.icardweb.service.CardInfoService;
+import com.shenhangyu.iweb.portal.bean.CardInfoBean;
+import com.shenhangyu.iweb.portal.service.CardInfoService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -31,13 +31,13 @@ public class CardInfoController {
 	private static Logger logger = LoggerFactory.getLogger(CardInfoController.class);
 	
     @Autowired(required = false)
-    private CardInfoService CardInfoService;
+    private CardInfoService cardInfoService;
     
     @ApiOperation(value = "根据卡号更新信息",notes="根据卡号更新信息",httpMethod="POST",response=CardInfoBean.class)
     @PostMapping("/getCardInfoBean")
     public CardInfoBean getCardInfoBean(){
     	logger.info("测试JSON对象转换");
-    	List<CardInfoBean> beans = CardInfoService.queryICardInfos();
+    	List<CardInfoBean> beans = cardInfoService.queryICardInfos();
     	CardInfoBean bean = beans.get(0);
         return bean;
     }
@@ -55,7 +55,7 @@ public class CardInfoController {
     public JSONObject queryCardinfo(@ApiParam(name="json",value="请求参数为Json对象")@RequestBody JSONObject json){
     	logger.info("进入查询卡号信息controller...........");
         String userZhName = json.getString("userZhName");
-        CardInfoBean cardInfoBean = CardInfoService.getCardInfoBean(userZhName);
+        CardInfoBean cardInfoBean = cardInfoService.getCardInfoBean(userZhName);
         JSONObject resObject = JSONObject.parseObject(JSONObject.toJSON(cardInfoBean).toString());
         return resObject;
     }
@@ -65,7 +65,7 @@ public class CardInfoController {
     public JSONObject updateCardinfo(@ApiParam(name="json",value="请求参数为Json对象")@RequestBody JSONObject json){
     	logger.info("进入更新卡号信息controller...........");
         String userZhName = json.getString("userZhName");
-        CardInfoBean cardInfoBean = CardInfoService.getCardInfoBean(userZhName);
+        CardInfoBean cardInfoBean = cardInfoService.getCardInfoBean(userZhName);
         JSONObject resObject = JSONObject.parseObject(JSONObject.toJSON(cardInfoBean).toString());
         return resObject;
     }

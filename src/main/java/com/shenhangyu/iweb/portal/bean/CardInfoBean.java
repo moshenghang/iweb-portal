@@ -1,4 +1,4 @@
-package com.shenhangyu.icard.icardweb.bean;
+package com.shenhangyu.iweb.portal.bean;
 
 import java.io.Serializable;
 import java.util.Date;

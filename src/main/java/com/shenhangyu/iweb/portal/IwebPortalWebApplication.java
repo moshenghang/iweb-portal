@@ -1,4 +1,4 @@
-package com.shenhangyu.icard.icardweb;
+package com.shenhangyu.iweb.portal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,7 +17,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableEurekaClient
 @SpringBootApplication
-public class IcardWebApplication {
+public class IwebPortalWebApplication {
 
 	/**
 	 * 使用@Bean注解方式fastJsonHttpMessageConvert解析对象
@@ -37,7 +37,7 @@ public class IcardWebApplication {
 	}
 	
     public static void main(String[] args) {
-        SpringApplication.run(IcardWebApplication.class, args);
+        SpringApplication.run(IwebPortalWebApplication.class, args);
     }
 
 }

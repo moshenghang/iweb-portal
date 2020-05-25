@@ -1,13 +1,14 @@
 /**
  * 版权所有©深航渔
  */
-package com.shenhangyu.icard.icardweb.mapper;
+package com.shenhangyu.iweb.portal.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.shenhangyu.icard.icardweb.bean.CardInfoBean;
+import com.shenhangyu.iweb.portal.bean.CardInfoBean;
+
 
 /**
  *描述：
