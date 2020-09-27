@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenhangyu.iweb.portal.mapper.UserInfoMapper">
+	<resultMap type="com.shenhangyu.iweb.portal.bean.UserInfoBean" id="userInfoResultMap">
+        <result property="userId" column="user_id"/>
+        <result property="userName" column="user_name"/>
+        <result property="loginAccount" column="login_account"/>
+        <result property="loginPassword" column="login_password"/>
+    </resultMap>
+    <sql id="all_Column_list">
+    	user_id,user_name,login_account,login_password
+    </sql>
+	<select id="selectAllUserInfoBeans" resultMap="userInfoResultMap">
+		select * from user_info
+	</select>
+	<select id="queryUserInfo" resultMap="userInfoResultMap" parameterType="java.lang.String">
+		select * from user_info where login_account=#{loginAccount,jdbcType=VARCHAR}
+	</select>
+</mapper>

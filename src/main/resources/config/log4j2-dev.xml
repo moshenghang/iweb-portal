@@ -63,7 +63,8 @@
 		</RollingFile>
 	</appenders>
 	<loggers>
-		<root level="info">
+		<root level="INFO">
+		<!--<root level="DEBUG"> 这个级别可以打印SQL -->
 			<appender-ref ref="Console"/>
 			<appender-ref ref="LogRollingFile"/>
 			<appender-ref ref="ErrorRollingFile"/>
